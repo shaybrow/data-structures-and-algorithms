@@ -91,7 +91,7 @@ const fizzbuzz = (arr) => {
   const array = arr;
   const returnArray = [];
 
-  array.forEach((item, index, array) => {
+  array.forEach((item) => {
     if (item % 3 === 0 && item % 5 === 0) {
       returnArray.push('Fizz Buzz');
     } else if (item % 3 === 0) {
