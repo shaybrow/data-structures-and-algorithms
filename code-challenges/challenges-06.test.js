@@ -131,6 +131,7 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   let x = false;
+  console.log(Object.values(arr));
   Object.values(arr).forEach(person => {
     if (person.name === character) {
       if (person.children === []) {
