@@ -89,12 +89,14 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  let x = 0;
-  const out = arr.map(obj => {
-    if (obj.store === 'Pet store') {
-
+  let z = 0;
+  const x = arr.filter(obj => obj.store === 'Pet store');
+  x[0].items.forEach(obj => {
+    if (obj.name === 'Treats') {
+      z = obj.quantity;
     }
   });
+  return z;
 };
 
 /* ------------------------------------------------------------------------------------------------

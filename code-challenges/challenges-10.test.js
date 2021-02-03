@@ -9,13 +9,18 @@ Build a simple express server. Connect a '/hello' route that sends a greeting of
 const createServer = () => {
   const express = require('express');
   const app = express();
-  app.get('/favoritefoods', (req, res))
-    .then(result => {
-      return ['carrot', 'something'];
-    })
-    .catch(error => {
-      res.status(404);
-    });
+  app.get('/hello', (req, res) => {
+    res.send('hey');
+  });
+  app.get('/aboutme', (req, res) => {
+    res.send('kjabsikjdbkjasdkhjsbakjd');
+  });
+  app.get('/favoritefoods', (req, res) => {
+    res.send(['ketchup', 'lettuce']);
+  });
+
+
+
   var server = app.listen(3301, function () {
     var port = server.address().port;
     console.log('Example app listening at port', port);
@@ -34,15 +39,18 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  let y = 0;
-  input.map((obj) => {
-    if (target === obj) {
-      y++;
-      console.log(obj);
-      console.log(target);
+  let x = 0;
+  input.forEach(obj => {
+    if (obj === target) {
+      x++;
     }
+    obj.forEach(some => {
+      if (some === target) {
+        x++;
+      }
+    });
   });
-  return y;
+  return x;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,6 +64,13 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
+  let x = 0;
+  input.forEach(obj => {
+    x += obj.reduce((acc, value, index) => {
+      return acc + value;
+    });
+  });
+  return x;
 };
 
 /* ------------------------------------------------------------------------------------------------
