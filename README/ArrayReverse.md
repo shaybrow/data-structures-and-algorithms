@@ -1,7 +1,3 @@
-# Data Structures and Algorithms
-
-## Language: `Java`
-
 # Reverse an Array
 
 Takes in an array and returns an int array with the same information in reverse order.
